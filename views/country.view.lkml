@@ -13,6 +13,12 @@ view: country {
     type: number
     sql: ${TABLE}."country_id" ;;
   }
+
+  filter: country_filter {
+    type: string
+    sql: {% condition country_filter %} ${country_name} {% endcondition %}  ;;
+    suggest_dimension: country_name
+  }
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
     # This dimension will be called "Country Name" in Explore.
