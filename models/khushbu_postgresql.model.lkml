@@ -63,7 +63,7 @@ explore: country {}
 
 explore: customer {
   always_filter: {
-    filters: [store_id: "2",customer.customer_id: "148"]
+    filters: [customer.first_name: "Eleanor"]
   }
   join: address {
     type: left_outer
