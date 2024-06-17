@@ -16,7 +16,6 @@ view: country {
 
   filter: country_filter {
     type: string
-    sql: {% condition country_filter %} ${country_name} {% endcondition %}  ;;
     suggest_dimension: country_name
   }
     # Here's what a typical dimension looks like in LookML.

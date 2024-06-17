@@ -72,6 +72,9 @@ view: customer {
       ;;
   }
 
+
+
+
   dimension: email {
     type: string
     sql: ${TABLE}."email" ;;
@@ -115,6 +118,26 @@ view: customer {
     type: number
     # hidden: yes
     sql: ${TABLE}."store_id" ;;
+  }
+
+  parameter: currency_parameter {
+    label: "Currency"
+    type: unquoted
+    allowed_value: {
+      label: "Euro"
+      value: "EURO"
+    }
+    allowed_value: {
+      label: "Local Currency"
+      value: "LOCAL"
+    }
+  }
+
+
+  measure: test {
+    type: sum
+    sql: ${store_id} ;;
+   # html: {{rendered_value}} @{currency_html};;
   }
   measure: count {
     type: count
