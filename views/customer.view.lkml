@@ -106,12 +106,14 @@ view: customer {
   dimension: dynamic_last_update_date_dimension {
     type: string
     label_from_parameter: dynamic_last_update_date_selection
-    sql:
-    {% if dynamic_last_update_date_selection._parameter_value == "'Last Update Month'" %} ${last_update_month}
-    {% elsif dynamic_last_update_date_selection._parameter_value == "'Last Update Hour'" %} ${last_update_hour}
-    {% else %} ${last_update_date} {% endif %}
-
-      ;;
+    sql: : "{% if dynamic_create_date_selection._parameter_value == 'Created Month' %}
+${create_month}
+{% elsif dynamic_create_date_selection._parameter_value == 'Created Hour' %}
+${create_hour}
+{% else %}
+${create_date}
+{% endif %}
+" ;;
   }
 
   dimension: store_id {
@@ -137,7 +139,7 @@ view: customer {
   measure: test {
     type: sum
     sql: ${store_id} ;;
-   # html: {{rendered_value}} @{currency_html};;
+  # html: {{rendered_value}} @{currency_html};;
   }
   measure: count {
     type: count
