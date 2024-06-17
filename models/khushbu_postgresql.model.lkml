@@ -27,6 +27,7 @@ persist_with: khushbu_postgresql_default_datagroup
 
 explore: actor {}
 
+
 explore: actor_info {
   join: actor {
     type: left_outer
