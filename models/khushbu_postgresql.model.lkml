@@ -64,7 +64,7 @@ explore: country {}
 
 explore: customer {
   always_filter: {
-    filters: [customer.date_selector: "2024-06-14"]
+    filters: [customer.date_selector: "2024-06-14", customer.dynamic_last_update_date_selection: "Last Update Month"]
   }
   join: address {
     type: left_outer
