@@ -45,6 +45,10 @@ view: customer {
     type: yesno
     sql: ${TABLE}."activebool" ;;
   }
+  filter: customer_test_filter {
+    suggest_dimension: create_date
+    type: date
+  }
 
   dimension: address_id {
     type: number
@@ -61,6 +65,13 @@ view: customer {
     datatype: date
     sql: ${TABLE}."create_date" ;;
   }
+
+  dimension: year_da {
+    type: date_raw
+    sql: ${create_year} ;;
+    html: {{ rendered_value | date: " %F" }};;
+  }
+
 
   parameter: dynamic_create_date_selection {
     type: string
