@@ -63,8 +63,7 @@ explore: city {
 explore: country {}
 
 explore: customer {
-
-  always_filter: {
+always_filter: {
     filters: [customer.date: "2024-06-14"]
   }
   join: address {
