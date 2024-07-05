@@ -46,6 +46,11 @@ view: customer {
     sql: ${TABLE}."activebool" ;;
   }
 
+  filter: customer_test_filter {
+    suggest_dimension: create_date
+    type: date_time
+  }
+
   dimension: address_id {
     type: number
     # hidden: yes
