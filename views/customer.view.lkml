@@ -23,11 +23,11 @@ view: customer {
   }
 
   parameter: date_selector {
-    type: date
+    type: date_time
     }
 
   dimension: date {
-    type: date
+    type: date_time
     sql: {% parameter date_selector %} ;;
   }
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
@@ -49,6 +49,8 @@ view: customer {
     suggest_dimension: create_date
     type: date
   }
+
+
 
   dimension: address_id {
     type: number

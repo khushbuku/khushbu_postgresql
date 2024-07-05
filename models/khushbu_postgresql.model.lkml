@@ -64,6 +64,9 @@ explore: country {}
 
 explore: customer {
 
+  always_filter: {
+    filters: [customer.customer_test_filter: "2024-06-14"]
+  }
   join: address {
     type: left_outer
     sql_on: ${customer.address_id} = ${address.address_id} ;;
