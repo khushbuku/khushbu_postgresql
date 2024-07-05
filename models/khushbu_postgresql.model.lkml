@@ -65,7 +65,7 @@ explore: country {}
 explore: customer {
 
   always_filter: {
-    filters: [customer.customer_test_filter: "2024-06-14"]
+    filters: [customer.date: "2024-06-14"]
   }
   join: address {
     type: left_outer
